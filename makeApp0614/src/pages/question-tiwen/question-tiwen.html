@@ -1,0 +1,54 @@
+<!--
+  Generated template for the QuestionTiwenPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+
+
+    <ion-buttons start>
+      <button ion-button icon-left clear (click)="dismiss()">
+        <ion-icon name="close" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title style="font-size:0.8rem">猿问详情</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-input type="text" placeholder="用一句话描述你的问题" [(ngModel)]="qtitle"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>选择分类</ion-label>
+      <ion-select [(ngModel)]="c_sortno"  cancelText="取消" okText="确定">
+        <ion-option value="1">HTML/CSS</ion-option>
+        <ion-option value="2">JavaScript</ion-option>
+        <ion-option value="3">HTML5</ion-option>
+        <ion-option value="4">CSS3</ion-option>
+        <ion-option value="6">Node.js</ion-option>
+        <ion-option value="7">AngularJS</ion-option>
+        <ion-option value="10">Vue.js</ion-option>
+        <ion-option value="11">Sass/Less</ion-option>
+        <ion-option value="12">WebApp</ion-option>
+        <ion-option value="15">Java</ion-option>
+        <ion-option value="17">C</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>问题补充</ion-label>
+      <ion-textarea [(ngModel)]="qdetail" clearInput="true"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button full color="danger" (click)="tiwen(qtitle,c_sortno,qdetail)">提交</button>
+</ion-content>

@@ -1,0 +1,32 @@
+<!--
+  Generated template for the QuestionDetailAnswerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+
+
+    <ion-buttons start>
+      <button ion-button icon-left clear (click)="dismiss()">
+        <ion-icon name="close" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title style="font-size:0.8rem">猿问详情</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>写下你的回答</ion-label>
+      <ion-textarea [(ngModel)]="rdetail" clearInput="true"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+  <button ion-button full color="danger" (click)="com(rdetail)">提交</button>
+</ion-content>

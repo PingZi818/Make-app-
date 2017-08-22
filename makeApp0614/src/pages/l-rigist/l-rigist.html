@@ -1,0 +1,46 @@
+<!--
+  Generated template for the LRigistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-grid >
+    <ion-row>
+      <button ion-button icon-left clear (click)="dismiss()">
+        <ion-icon name="close" ></ion-icon>
+      </button>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="login-page-top">
+    <ion-row>
+      <ion-col col-12>注册码客网账号</ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-col col-12>
+    <form [formGroup]="loginForm" (ngSubmit)="rigiston(loginForm.value)" novalidate>
+      <ion-item [class.error]="!user_tel.valid && user_tel.touched">
+        <ion-input type="text" placeholder="请输入您的手机号" value="" [formControl]="user_tel" clearInput="true"></ion-input>
+      </ion-item>
+      <ion-label *ngIf="user_tel.hasError('required') && user_tel.touched" class="error-message">* 请输入手机号</ion-label>
+      <ion-label *ngIf="(user_tel.hasError('minlength') || user_tel.hasError('maxlength')|| user_tel.hasError('pattern')) && user_tel.touched" class="error-message">* 请输入正确的电话号码</ion-label>
+
+      <ion-item>
+        <ion-input type="password" placeholder="请输入密码"  value="" [formControl]="user_password" clearInput=true></ion-input>
+      </ion-item>
+      <ion-label *ngIf="user_password.hasError('required') && user_password.touched" class="error-message">* 密码</ion-label>
+      <ion-label *ngIf="( user_password.hasError('pattern')) && user_password.touched" class="error-message">* 6位以上，包含大小写和数字组合</ion-label>
+
+      <button ion-button block color="secondary" type="submit" [disabled]="!loginForm.valid">注册</button>
+    </form>
+  </ion-col>
+
+
+
+</ion-content>

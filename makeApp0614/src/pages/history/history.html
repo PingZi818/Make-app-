@@ -1,0 +1,46 @@
+<!--
+  Generated template for the HistoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header >
+  <ion-navbar no-border-bottom  [color]="'dark'">
+    <ion-buttons style="order:1 !important;" start>
+      <button ion-button icon-left clear (click)="dismiss()" >
+        <ion-icon name="arrow-back" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title style="font-size:0.8rem">历史记录</ion-title>
+  </ion-navbar>
+
+
+</ion-header>
+<ion-content padding>
+ <div *ngFor="let mydongtai of dongtai"style="margin-top: 20px;">
+   <ion-avatar>
+     <img src="http://opdizmh0n.bkt.clouddn.com/{{user.user_icon}}" style="width: 40px;height: 40px;border-radius: 50%">
+   </ion-avatar>
+     <div  class="contents fr">
+     <div class="head">
+       <div class="name">
+         <span>{{user.user_name}}</span>
+       </div>
+       <div class="time">{{mydongtai.sendtime}}</div>
+     </div>
+     <div class="body pr">
+         <img src="{{mydongtai.img}}" width="40" height="40" >
+       <div class="contentss">
+         <div class="tag">
+           <span>来自</span>
+           <span class="ml10 ng-binding"> {{mydongtai.name}}</span>
+         </div>
+         <div class="subtitle">
+           {{mydongtai.text|wordspipe:true:100:' ...'}}
+         </div>
+       </div>
+     </div>
+   </div>
+   <hr>
+ </div>
+</ion-content>

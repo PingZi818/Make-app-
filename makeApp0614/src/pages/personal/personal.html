@@ -1,0 +1,136 @@
+<ion-header [color]="'dark'">
+  <ion-navbar no-border-bottom [color]="'dark'">
+    <ion-toolbar [color]="'dark'">
+      <ion-buttons start>
+        <button ion-button icon-only color="royal" (click)="search()">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title style="font-size:0.8rem">我的</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only color="royal">
+          <ion-icon name="mail"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content style="background-color: rgb(248,248,248)">
+  <ion-grid>
+
+    <div style="display: inline-block;background: white" [ngSwitch]="loginStatus">
+      <div *ngSwitchCase="default">
+        <ion-row>
+          <ion-col col-2 >
+            <img src="assets/images/未登录.png" alt="">
+          </ion-col>
+          <ion-col col-10 >
+            <ion-label (click)="Login()">点击登录</ion-label>
+          </ion-col>
+        </ion-row>
+
+      </div>
+
+      <div *ngSwitchCase="'true'">
+        <ion-row>
+
+        <!--<img class="question-detail-usericon" src="http://opdizmh0n.bkt.clouddn.com/{{user.user_icon}}" height="50" width="50">-->
+
+        <!--<ion-label class="personal-username" >{{user.user_name}}</ion-label>-->
+
+        <!--<p>积分221</p>-->
+
+          <ion-item no-lines>
+            <ion-avatar item-left>
+              <img src="http://opdizmh0n.bkt.clouddn.com/{{user.user_icon}}" style="width: 50px;height: 50px;">
+            </ion-avatar>
+            <h2>{{user.user_name}}</h2>
+            <p style="font-size: 0.6rem;margin-top: 8px;">学习时长 139小时 &nbsp;&nbsp; | &nbsp;&nbsp;经验 2825 </p>
+          </ion-item>
+      </ion-row>
+        <ion-row style="font-size: 1.2rem;margin-top: 2%;">
+            <ion-col col-4 text-center>关注 1 </ion-col>
+          <span style="line-height: 26px;">|</span>
+            <ion-col col-4 text-center>粉丝 1</ion-col>
+          <span style="line-height: 26px;">|</span>
+            <ion-col col-3 text-center>积分 22</ion-col>
+        </ion-row>
+      </div>
+      <div *ngSwitchCase="'flase'">
+        <ion-row>
+          <ion-col col-2 >
+            <img src="assets/images/未登录.png" alt="">
+          </ion-col>
+          <ion-col col-10 >
+            <ion-label (click)="Login()">点击登录</ion-label>
+          </ion-col>
+        </ion-row>
+
+      </div>
+    </div>
+
+
+  <div class="person-div2">
+    <ion-row>
+      <ion-col col-4 text-center (click)="mycourse()">
+        <img src="http://or7kijeg2.bkt.clouddn.com/person_free_course.png" width="25%" style="margin-top: 2%">
+        <ion-label style="font-size: 1.3rem; margin: 6px 8px;">我的课程</ion-label>
+      </ion-col>
+      <ion-col col-4 text-center (click)="myactual()">
+        <img src="http://or7kijeg2.bkt.clouddn.com/person_acutal.png" width="25%" style="margin-top: 2%">
+        <ion-label style="font-size: 1.3rem;margin: 6px 8px;">我的实战</ion-label>
+
+      </ion-col>
+      <ion-col col-4 text-center (click)="myquestion()">
+        <img src="http://or7kijeg2.bkt.clouddn.com/person_question.png" width="25%" style="margin-top: 2%">
+        <ion-label style="font-size: 1.3rem;margin: 6px 8px;">我的猿问 </ion-label>
+
+      </ion-col>
+    </ion-row>
+  </div>
+  </ion-grid>
+
+  <ion-list no-lines>
+
+      <button ion-item (click)="myOrder()">
+        <ion-icon name="basket" ></ion-icon>
+        &nbsp;&nbsp;&nbsp;<span>我的订单</span>
+      </button>
+
+      <button ion-item  (click)="userInfo()">
+        <ion-icon name="person"></ion-icon>
+        &nbsp;&nbsp;&nbsp;<span>个人资料</span>
+      </button>
+
+      <button ion-item   (click)="night()">
+        <ion-label><ion-icon name="moon"></ion-icon>  &nbsp;&nbsp;&nbsp;夜间模式</ion-label>
+        <ion-toggle [(ngModel)]="blacks"color="blacks" ></ion-toggle>
+
+      </button>
+
+      <button ion-item   (click)="history()">
+        <ion-icon name="clock"></ion-icon>
+        &nbsp;&nbsp;&nbsp;<span>历史记录</span>
+
+      </button>
+      <button ion-item   (click)="set()"icon-left>
+        <ion-icon name="settings"></ion-icon>
+        &nbsp;&nbsp;&nbsp;<span>设置</span>
+      </button>
+
+  </ion-list>
+
+
+  <div  [ngSwitch]="loginStatus">
+    <div *ngSwitchCase="default">
+    </div>
+
+    <div *ngSwitchCase="'true'">
+      <button ion-button full color="danger" (click)="logout()" id="logout" >退出登录</button>
+    </div>
+    <div *ngSwitchCase="'flase'">
+
+    </div>
+  </div>
+
+</ion-content>

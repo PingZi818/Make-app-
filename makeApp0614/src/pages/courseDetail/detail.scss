@@ -1,0 +1,38 @@
+page-detail{
+  .ion-header{
+    background-color: #7ccbff!important;
+}
+  .segment-md .segment-button.segment-activated {
+    border-color: red !important;
+    opacity: 1;
+  }
+
+  .segment-md .segment-button{
+    color: white;
+    font-size: 1.8rem;
+  }
+  .home-shizhanimg{
+
+    width: 90px !important;
+    height: 100px!important;;
+    border-radius: 0!important;;
+    overflow: hidden;
+  }
+  .question-detail-sortblock{
+
+    background-color: #c7c7c7;
+    color: #f2f2f2;
+    border-radius: 4px;
+    font-size: 1.0rem;
+    padding: 5px;
+  }
+  .studyfo{
+    background-color:grey;
+    color: #f2f2f2;
+    border-radius: 2px;
+    font-size:xx-small;
+    padding:2px;
+    padding-top:-2px;
+    margin:0 15px 0 5px;
+  }
+}

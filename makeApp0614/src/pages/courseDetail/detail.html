@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-navbar no-border-bottom  [color]="'dark'">
+    <ion-title style="font-size:0.8rem"> {{c_sortname}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        最新
+      </button>
+      <button ion-button icon-only>
+        最热
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top [color]="'dark'">
+    <ion-segment [(ngModel)]="segmentModel">
+
+              <ion-segment-button value="segmentOne">
+                全部
+              </ion-segment-button>
+
+              <ion-segment-button value="segmentTwo">
+              基础
+              </ion-segment-button>
+
+              <ion-segment-button value="segmentThree">
+                案例
+              </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+      <div (swipe)="swipeEvent($event)"[ngSwitch]="segmentModel">
+        <ion-list *ngSwitchCase="'segmentOne'">
+
+          <ion-grid  style="margin-top:3px;background-color: white">
+            <ion-row *ngFor="let item of CoursesDetail" (click)="goToOtherPage(item.cno,item.c_sortname)" style="border-bottom:solid 0.5px rgba(120, 120, 120, 0.34);    padding-top: 3px;    padding-bottom: 3px;">
+              <ion-col col-3 >
+                <img class="home-shizhanimg" src="{{item.background}}" alt="">
+              </ion-col>
+              <ion-col col-9 style="padding-left:8px">
+                <ion-row style="font-size:1.4rem;height: 15px">{{item.cname}}</ion-row>
+                <ion-row style="color: gray; margin-top: 3%;font-size: 1.3rem;">{{item.cover_detail}}</ion-row>
+                <ion-row style="padding-top: 8%;">
+                  <ion-col col-3 style="font-size:1.5rem;color:red" >  <span class="question-detail-sortblock" >{{item.degreename}}</span></ion-col>
+                  <ion-col col-9 style="font-size:0.6em;color:gray;line-height: 25px;">{{item.renshu}}人学习</ion-col>
+
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'segmentTwo'">
+          <ion-grid  style="margin-top:3px;background-color: white">
+            <ion-row *ngFor="let item of newcourse_Detail" (click)="goToOtherPage(item.cno,item.c_sortname)" style="border-bottom:solid 0.5px rgba(120, 120, 120, 0.34);    padding-top: 3px;    padding-bottom: 3px;">
+              <ion-col col-3 >
+                <img class="home-shizhanimg" src="{{item.background}}" alt="">
+              </ion-col>
+              <ion-col col-9 style="padding-left:8px">
+                <ion-row style="font-size:1.4rem;height: 15px">{{item.cname}}</ion-row>
+                <ion-row style="color: gray; margin-top: 3%;font-size: 1.3rem;">{{item.cover_detail}}</ion-row>
+                <ion-row style="padding-top: 8%;">
+                  <ion-col col-3 style="font-size:1.5rem;color:red" >  <span class="question-detail-sortblock" >{{item.degreename}}</span></ion-col>
+                  <ion-col col-9 style="font-size:0.6em;color:gray;line-height: 25px;">{{item.renshu}}人学习</ion-col>
+
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'segmentThree'">
+          <ion-grid  style="margin-top:3px;background-color: white">
+            <ion-row *ngFor="let item of newcourse_Details" (click)="goToOtherPage(item.cno,item.c_sortname)" style="border-bottom:solid 0.5px rgba(120, 120, 120, 0.34);    padding-top: 3px;    padding-bottom: 3px;">
+              <ion-col col-3 >
+                <img class="home-shizhanimg" src="{{item.background}}" alt="">
+              </ion-col>
+              <ion-col col-9 style="padding-left:8px">
+                <ion-row style="font-size:1.4rem;height: 15px"> <span class="studyfo"style=" background-color:grey;
+    color: #f2f2f2;
+    border-radius: 2px;
+    font-size:xx-small;
+    padding:2px;
+    padding-top:-2px;
+    margin:0 15px 0 5px;" >已学</span>{{item.cname}}</ion-row>
+                <ion-row style="color: gray; margin-top: 4%;font-size: 1.3rem;">{{item.cover_detail}}</ion-row>
+                <ion-row style="padding-top: 8%;">
+                  <ion-col col-3 style="font-size:1.5rem;color:red" >  <span class="question-detail-sortblock" >{{item.degreename}}</span></ion-col>
+                  <ion-col col-9 style="font-size:0.6em;color:gray;line-height: 25px;">{{item.renshu}}人学习</ion-col>
+
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        </ion-list>
+      </div>
+</ion-content>
+
+

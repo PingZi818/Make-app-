@@ -1,0 +1,53 @@
+<!--
+  Generated template for the PersonMyquestionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header >
+  <ion-navbar no-border-bottom [color]="'dark'">
+    <ion-buttons style="order:1 !important;" start>
+      <button ion-button icon-left clear (click)="dismiss()">
+        <ion-icon name="arrow-back" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title style="font-size:0.8rem">我的猿问</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top [color]="'dark'">
+    <ion-segment [(ngModel)]="segmentModel">
+
+      <ion-segment-button value="segmentOne">
+        回答
+      </ion-segment-button>
+
+      <ion-segment-button value="segmentTwo">
+        提问
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div (swipe)="swipeEvent($event)"[ngSwitch]="segmentModel">
+    <ion-list *ngSwitchCase="'segmentOne'">
+      <ion-item (click)="questionDetail(tuijian.qno)" *ngFor="let tuijian of my_res" >
+        <p class="question-index-sort">来自 {{tuijian.c_sortname}}</p>
+        <h2 class="question-index-req">{{tuijian.qtitle}}</h2>
+        <h3 class="question-index-res">[<span style="color: #555555" >{{user_name}}</span> 的回答 ] {{tuijian.rdetail}}</h3>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'segmentTwo'">
+      <ion-item *ngFor="let wait of my_yuanwen" (click)="questionDetail(wait.qno)">
+        <p class="question-index-sort">来自 {{wait.c_sortname}}</p>
+        <h2 class="question-index-req">{{wait.name}}</h2>
+      </ion-item>
+    </ion-list>
+
+  </div>
+</ion-content>

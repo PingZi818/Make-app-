@@ -1,0 +1,255 @@
+<ion-header [color]="'dark'">
+  <ion-navbar no-border-bottom [color]="'dark'">
+    <ion-toolbar [color]="'dark'">
+      <ion-buttons start>
+        <button ion-button icon-only color="royal" (click)="search()">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title style="font-size:0.8rem">课程</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only color="royal">
+          <ion-icon name="mail"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <div id="middle" class="container">
+
+      <div class="course-skill">
+        <dl>
+          <dt>前端开发</dt>
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec2670001146402400240-100-100.jpg" alt=""(click)="goToOtherPage(1,'HTML/CSS')"></i>
+              <span>HTML/CSS</span>
+          </dd>
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec2720001296402400240-100-100.jpg" (click)="goToOtherPage(2,'JavaScript')"></i>
+              <span>JavaScript</span>
+          </dd>
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec27d0001738602400240-100-100.jpg"(click)="goToOtherPage(5,'JavaScript')"></i>
+              <span>jQuery</span>
+
+          </dd>
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec24d00015d1702400240-100-100.jpg"(click)="goToOtherPage(3,'JavaScript')"></i>
+              <span>Html5</span>
+          </dd>
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec25a0001094402400240-100-100.jpg"(click)="goToOtherPage(6,'JavaScript')"></i>
+              <span>Node.js</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec2220001272802400240-100-100.jpg"(click)="goToOtherPage(7,'JavaScript')"></i>
+              <span>AngularJS</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec1e10001860802400240-100-100.jpg" (click)="goToOtherPage(12,'JavaScript')"></i>
+              <span>WebApp</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec1d4000103f702400240-100-100.jpg" (click)="goToOtherPage(13,'JavaScript')"></i>
+              <span>前端工具</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec1c60001407602400240-100-100.jpg" alt=""(click)="goToOtherPage(4,'JavaScript')"></i>
+              <span>CSS3</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec1ac0001f4ea02400240-100-100.jpg" alt=""(click)="goToOtherPage(8,'JavaScript')"></i>
+              <span>Bootstrap</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/579f2dbd000130cc02400240-100-100.jpg" (click)="goToOtherPage(9,'JavaScript')"></i>
+              <span>React.JS</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/57b2d0d2000136e702400240-100-100.jpg" (click)="goToOtherPage(10,'JavaScript')"></i>
+              <span>Vue.js</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/57b4492a0001223302400240-100-100.jpg" (click)="goToOtherPage(11,'JavaScript')"></i>
+              <span>Sass/Less</span>
+          </dd>
+
+        </dl>
+      </div>
+
+      <div class="course-skill">
+        <dl>
+          <dt>后端开发</dt>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec1f00001739002400240-100-100.jpg" (click)="goToOtherPage(14,'JavaScript')"></i>
+              <span>PHP</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec2370001bebd02400240-100-100.jpg" (click)="goToOtherPage(15,'JavaScript')"></i>
+              <span>Java</span>
+          </dd>
+          <dd>
+
+              <i><img src="http://img.mukewang.com/565ec218000165b502400240-100-100.jpg" (click)="goToOtherPage(16,'JavaScript')"></i>
+              <span>Python</span>
+          </dd>
+          <dd>
+
+              <i><img src="http://img.mukewang.com/565ec1990001b8ad02400240-100-100.jpg" (click)="goToOtherPage(17,'JavaScript')"></i>
+              <span>C</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec1720001449902400240-100-100.jpg" (click)="goToOtherPage(18,'JavaScript')"></i>
+              <span>C++</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec1570001251d02400240-100-100.jpg" (click)="goToOtherPage(19,'JavaScript')"></i>
+              <span>Go</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec0e70001ae1702400240-100-100.jpg" (click)="goToOtherPage(20,'JavaScript')"></i>
+              <span>C#</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/58453e110001204302400240-100-100.jpg" (click)="goToOtherPage(8,'JavaScript')"></i>
+              <span>Ruby</span>
+          </dd>
+
+        </dl>
+      </div>
+
+      <div class="course-skill">
+        <dl>
+          <dt>移动开发</dt>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec1fe0001ab9f02400240-100-100.jpg" alt=""></i>
+              <span>Android</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec22c000166b602400240-100-100.jpg" alt=""></i>
+              <span>iOS</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec18d0001422902400240-100-100.jpg" alt=""></i>
+              <span>Unity 3D</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec0fa0001bafb02400240-100-100.jpg" alt=""></i>
+              <span>Cocos2d-x</span>
+          </dd>
+
+        </dl>
+      </div>
+
+      <div class="course-skill">
+        <dl>
+          <dt>数据库</dt>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec28c00016afc02400240-100-100.jpg" alt=""></i>
+              <span>MySQL</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec2a400019b1502400240-100-100.jpg" alt=""></i>
+              <span>MongoDB</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec17f0001a9a302400240-100-100.jpg" alt=""></i>
+              <span>Oracle</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec0b700018f8902400240-100-100.jpg" alt=""></i>
+              <span>SQL Server</span>
+          </dd>
+        </dl>
+      </div>
+
+      <div class="course-skill">
+        <dl>
+          <dt>云计算&amp;大数据</dt>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec2b00001dc0902400240-100-100.jpg" alt=""></i>
+              <span>云计算</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec12d0001749b02400240-100-100.jpg" alt=""></i>
+              <span>大数据</span>
+          </dd>
+
+        </dl>
+      </div>
+
+      <div class="course-skill">
+        <dl>
+          <dt>运维&amp;测试</dt>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/565ec29900019ddd02400240-100-100.jpg" alt=""></i>
+              <span>Linux</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/57aa954b0001397802400240-100-100.jpg" alt=""></i>
+              <span>测试</span>
+          </dd>
+
+        </dl>
+      </div>
+
+      <div class="course-skill">
+        <dl>
+          <dt>UI设计</dt>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/58af9ee40001269602400240-100-100.jpg" alt=""></i>
+              <span>设计基础</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/58af9f8b0001e56802400240-100-100.jpg" alt=""></i>
+              <span>设计工具</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/58afa039000194df02400240-100-100.jpg" alt=""></i>
+              <span>APPUI设计</span>
+          </dd>
+
+          <dd>
+              <i><img src="http://img.mukewang.com/58afa0d10001a39f02400240-100-100.jpg" alt=""></i>
+              <span>动画动效</span>
+          </dd>
+
+        </dl>
+      </div>
+
+
+    </div>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,29 @@
+page-person-zhifu {
+  ion-card img {
+    display: inline-block;
+    width: 30%;
+    height: 20%;
+    float: left;
+    //margin-left: 3%;
+    margin-right: 3%;
+  }
+  .orderId{
+    margin-left: 3%;
+    font-size: 1.3rem;
+    color: #626262;
+    margin-top: 2%;
+  }
+  .bar-button-clear-md{
+    vertical-align: middle;
+    color: white;
+  }
+  .ordertitl{
+    font-weight: 500;
+    font-size: 1.4rem;
+  }
+  .ordertime{
+    line-height: 30px;
+    margin-left: 3%;
+    font-size:1.1rem;
+  }
+}

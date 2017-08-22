@@ -1,0 +1,126 @@
+<ion-header>
+    <ion-grid class="broad" style="background-color:#ffffff;">
+        <ion-row style="margin-left:-282px;margin-top:-13px;z-index:100;">
+          <ion-col>
+            <button ion-button color="dark"large clear  (click)="dismiss()">
+              <ion-icon name="arrow-back" style="color: white;background:grey"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row  style="width:100%;height:100%;margin-top:-20%;">
+        <ion-col>
+          <!--<video width="100%" height="450" controls>-->
+            <!--<source [src]="sectionvideolinks" type="video/mp4">-->
+            <!--<source [src]="sectionvideolinks" type="video/ogg">-->
+          <!--</video>-->
+          <iframe data-tap-disabled="true" [src]="sectionvideolinks" style="height:120%;width:100%;margin:auto;"frameborder="0" allowfullscreen></iframe>
+        </ion-col>
+        </ion-row>
+    </ion-grid>
+  <ion-toolbar no-border-top style="background-color: white">
+    <ion-segment [(ngModel)]="segmentModel">
+      <ion-segment-button value="segmentOne">
+        章节
+      </ion-segment-button>
+      <ion-segment-button value="segmentTwo">
+        详情
+      </ion-segment-button>
+      <ion-segment-button value="segmentThree">
+        评论
+      </ion-segment-button>
+      <ion-segment-button value="segmentFour">
+        问答
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="释放刷新"
+      refreshingSpinner="circles"
+      refreshingText="正在刷新...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div (swipe)="swipeEvent($event)" [ngSwitch]="segmentModel">
+    <ion-list *ngSwitchCase="'segmentOne'">
+      <ion-item>
+        <div *ngFor="let Chapter of Chapter">
+          <!--<h3>{{sectionvideolinks}}</h3>-->
+          <h3 class="video-charpt">{{Chapter.chaptername}}{{Chapter.dir_content}}</h3>
+          <h3 class="video-section"*ngFor="let Section of Section|pipedetail:Chapter.chapterno" (click)="playSectionVideo($event,Section.chapterno,Section.sectionno)">
+            <ion-icon name="play"></ion-icon>
+            {{Section.chapterno}}-{{Section.sectionno}}{{Section.sectioncontent}} <span float-right style="padding-right:10px;">01:41</span>
+          </h3>
+
+        </div>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'segmentTwo'">
+      <ion-item>
+        <div *ngFor="let CourseDetail of CourseDetail">
+          <h2 >{{CourseDetail.cname}}</h2 >
+          <h3 class="video-detail "> {{CourseDetail.cdetail}}</h3>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <h2 >课程须知</h2>
+
+        <h3 class="video-detail">该课程是针对新手的一个简单基础的课程，让您快速了解JS，通过一些简单的代码编写体会JS。如果您已经对JS有所了解，可以跳过本课程，学习JS进阶课程，进一步学习JS相应的基础知识。学习本课程，希望您至少具备HTML/CSS基础知识，认识常用的标签。</h3>
+
+      </ion-item>
+
+      <ion-item>
+        <h2 >老师告诉你能学到什么</h2>
+
+        <h3 class="video-detail">1. 理解JavaScript基础语法；<br>
+          2. 掌握常用语句的使用方法；<br>
+          3. 学会如何获取DOM元素及进行简单操作。</h3>
+
+      </ion-item>
+      <ion-item>
+        <h2 >相关课程</h2>
+
+        <h3 class="video-detail"></h3>
+
+      </ion-item>
+    </ion-list>
+
+
+
+    <ion-list *ngSwitchCase="'segmentThree'">
+
+      <ion-item *ngFor="let comment of comments">
+        <ion-avatar item-left >
+          <img class="video-comment-img" src="http://opdizmh0n.bkt.clouddn.com/{{comment.user_icon}}">
+        </ion-avatar>
+        <h3 class="video-commenth">{{comment.user_name}}</h3>
+        <h3 class="video-commen">6小时前</h3>
+        <p class="video-commentp">{{comment.ccdetail}}</p>
+        <span class="video-like-count {{comment.style}}" (click)="like($event,comment.ccno)">
+          <ion-icon name="thumbs-up"></ion-icon>
+          {{comment.dianzanrenshu}}
+        </span>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'segmentFour'">
+      <ion-item *ngFor="let CourseQuestion of CourseQuestion">
+        <h2 style="color: black"class=" video-detail">{{CourseQuestion.qtitle}}</h2>
+        <h3 class=" video-detail-ques">
+          [{{CourseQuestion.huidaren}} 的回答]:{{CourseQuestion.rdetail}}
+        </h3>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
+<span style=" position: absolute;bottom: 10px;z-index: 100;right: 15px;" >
+    <button ion-button icon-only (click)="insertCom()">
+  <ion-icon name="add"></ion-icon>
+</button></span>

@@ -1,0 +1,86 @@
+<!--
+  Generated template for the CreateorderPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header >
+  <ion-navbar style="background-color: rgb(52,57,75)!important;" [color]="'dark'">
+    <ion-toolbar style="min-height: 0px!important; ">
+      <ion-title style="font-size:0.8rem;">购买实战</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only color="royal">
+          <ion-icon name=""></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content style="background-color: rgb(248,248,248)">
+
+  <ion-card class="card">
+    <ion-row style="height: 20px;
+    line-height: 20px;
+    margin-top: 8px;">
+      <p style="margin-top: 2px;font-size:0.8em">商品信息</p>
+    </ion-row>
+    <hr>
+    <ion-item>
+      <ion-row *ngFor="let adetail of a_details">
+      <ion-col col-5><img src="{{adetail.acover_img}}" ></ion-col>
+      <ion-col  col-7 >
+        <ion-row><p style="font-size:0.7em">{{adetail.aname}}</p></ion-row>
+        <ion-row> <p><span style="color: red">￥{{adetail.price}}.00</span></p></ion-row>
+      </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-card>
+
+  <ion-card class="card" >
+     <ion-row style="height: 20px;
+    line-height: 20px;
+    margin-top: 8px;">
+      <p style="font-size:0.8em">支付宝方式</p>
+      </ion-row>
+      <hr>
+    <ion-row>
+      <ion-col col-4> <img src="../../assets/images/pay_alipay.png" alt="" ></ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card class="card">
+    <ion-row *ngFor="let adetail of a_details">
+      <ion-col >
+        <p style="font-size:0.8em">商品金额</p>
+        <p style="font-size:0.8em">优惠券抵扣</p>
+      </ion-col>
+      <ion-col right text-right>
+        <p style="color: red;font-size:0.8em">￥{{adetail.price}}.00</p>
+        <p style="color: red;font-size:0.8em">-￥0.00</p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card class="card">
+  <ion-item>
+    <ion-label style="font-size: 0.7em"> 我已阅读并同意《用户付费协议》</ion-label>
+    <ion-checkbox color="secondary" checked="true"></ion-checkbox>
+  </ion-item>
+</ion-card>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar  *ngFor="let adetail of a_details" style="height:50px;line-height: 50px;text-align: center" >
+    <p style="display: inline-block;color:red;font-size:24px;text-align: center">￥<span>{{adetail.price}}</span>.00</p>
+    <ion-buttons end>
+      <p style="display: inline-block;background-color: red;width:120px;height:50px;text-align:center;color:white;line-height:50px;font-size:1em">
+        <button (click)="createOrder(adetail.ano)" ion-button clear style="line-height:40px">提交订单</button>
+      </p>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
+

@@ -1,0 +1,33 @@
+<!--
+  Generated template for the VideoInsertComPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+
+
+    <ion-buttons start>
+      <button ion-button icon-left clear (click)="dismiss()">
+        <ion-icon name="close" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title style="font-size:0.8rem">添加评论</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>写下你的评论</ion-label>
+      <ion-textarea [(ngModel)]="ccdetail" clearInput="true"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+  <button ion-button full color="danger" (click)="com(ccdetail)">提交</button>
+</ion-content>
+

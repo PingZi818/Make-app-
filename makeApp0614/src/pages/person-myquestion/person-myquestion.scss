@@ -1,0 +1,27 @@
+page-person-myquestion {
+  .segment-md .segment-button.segment-activated {
+    border-color: red !important;
+    opacity: 1;
+
+  }
+  .segment-md .segment-button{
+    color:white;
+    font-size: 1.8rem;
+  }
+  .question-index-req{
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: black;
+    white-space: normal;
+  }
+  .question-index-sort{
+    font-size: 0.6rem;
+    color: #959595;
+  }
+  .question-index-res{
+    margin-top: 12px;
+    white-space: normal;
+    font-size: 1.3rem;
+  }
+}

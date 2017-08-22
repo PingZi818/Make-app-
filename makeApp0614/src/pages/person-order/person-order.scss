@@ -1,0 +1,39 @@
+page-person-order {
+  .segment-md .segment-button.segment-activated {
+    border-color: red !important;
+    opacity: 1;
+
+  }
+  .segment-md .segment-button{
+    color: white;
+    font-size: 1.8rem;
+  }
+  ion-card img {
+    display: inline-block;
+    width: 30%;
+    height: 20%;
+    float: left;
+    //margin-left: 3%;
+    margin-right: 3%;
+  }
+  .orderId{
+    margin-left: 3%;
+    font-size: 1.3rem;
+    color: #626262;
+    margin-top: 2%;
+  }
+  .orderallprice{
+    line-height: 30px;
+    margin-left: 3%;
+    color: #626262;
+  }
+  .ordertitle{
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+  .ordertime{
+    line-height: 30px;
+    margin-left: 3%;
+    font-size:1.1rem;
+  }
+}

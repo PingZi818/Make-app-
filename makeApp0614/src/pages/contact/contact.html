@@ -1,0 +1,121 @@
+<ion-header [color]="'dark'">
+  <ion-navbar no-border-bottom [color]="'dark'">
+    <ion-toolbar [color]="'dark'">
+      <ion-buttons start>
+        <button ion-button icon-only color="royal" (click)="search()">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title style="font-size:0.8rem">实战</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only color="royal">
+          <ion-icon name="mail"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides #ionSlides loop="true" autoplay="2000" pager (ionSlideAutoplayStop)="autoPlay()" style="height: 80px;">
+    <ion-slide>
+      <img src="http://img.mukewang.com/59238bca000197a805900120.jpg" alt="带你入门Vue 2.0及案例开发"
+           title="带你入门Vue 2.0及案例开发" class="slide-image"/>
+    </ion-slide>
+    <ion-slide>
+      <img src="http://img.mukewang.com/5923a5cd000198ca05900120.jpg" alt="强力django+杀手级xadmin 打造上线标准的在线教育平台"
+           title="强力django+杀手级xadmin 打造上线标准的在线教育平台" class="slide-image">
+    </ion-slide>
+    <ion-slide>
+      <img src="http://img.mukewang.com/592257f100017aa905900120.jpg" alt="Node.js项目的线上服务器部署与发布"
+           title="Node.js项目的线上服务器部署与发布" class="slide-image">
+    </ion-slide>
+  </ion-slides>
+
+
+  <ion-grid class="actualcombmenu">
+    <ion-row>
+
+      <ion-col col-4>
+        <ion-row>
+        <ion-col (click)="filter(0)" col-10  class="actualcombmenu-items" >
+          全部
+        </ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col col-4>
+        <ion-row>
+        <ion-col (click)="filter(1)" col-10 class="actualcombmenu-items">
+          前端开发
+        </ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col col-4>
+        <ion-row>
+        <ion-col (click)="filter(2)" col-10 class="actualcombmenu-items">
+          后端开发
+        </ion-col>
+        </ion-row>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-4>
+        <ion-row>
+          <ion-col (click)="filter(3)" col-10 class="actualcombmenu-items">
+            移动开发
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-4>
+        <ion-row>
+          <ion-col  (click)="filter(4)" col-10 class="actualcombmenu-items">
+            数据库
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-4>
+        <ion-row>
+          <ion-col  (click)="filter(5)" col-10 class="actualcombmenu-items">
+           运维&测试
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-grid  style="padding-left:18px;padding-right:18px;margin-top:3px">
+    <ion-row *ngFor="let actualcomb of actualcomb_zhanshi" (click)="itemTapped($event,actualcomb.ano)"style="height:90px;border-bottom:solid 1px rgba(6, 10, 13, 0.29);padding-top: 10px;padding-bottom: 10px">
+      <ion-col col-4 >
+        <img src="{{actualcomb.acover_img}}" alt="">
+      </ion-col>
+      <ion-col col-8 style="padding-left:8px">
+        <ion-row style="font-size:1.4rem;height: 15px">{{actualcomb.aname}}</ion-row>
+        <ion-row style="font-size:0.6em;color:gray;height:30px">{{actualcomb.acover_content}}</ion-row>
+        <ion-row style="height: 15px">
+          <ion-col col-6 style="font-size:1.5rem;color:red">￥{{actualcomb.price}}.00</ion-col>
+
+          <ion-col col-6 style="font-size:0.6em;color:gray">{{actualcomb.renshu}}人学习</ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-infinite-scroll *ngIf="hasmore" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="加载更多实战...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <ion-row *ngIf="show" style="height: 15px;margin-top:-20px;margin-bottom:30px">
+    <ion-col col-4></ion-col>
+    <ion-col col-4 ><p style="width: 100%;text-align: center;color:darkgrey">已加载全部</p></ion-col>
+    <ion-col col-4></ion-col>
+  </ion-row>
+
+</ion-content>

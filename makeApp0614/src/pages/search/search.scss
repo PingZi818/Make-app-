@@ -1,0 +1,40 @@
+page-search {
+
+  ion-card img {
+    display: inline-block;
+    width: 25%;
+    height: 20%;
+    float: left;
+    //margin-left: 3%;
+    margin-right: 3%;
+  }
+  .search-title-cou{
+    margin-left: 5%;
+    font-size: 1.3rem;
+    color: #626262;
+    margin-top: 2%;
+    font-weight: 600;
+  }
+  .search-item-p-shizhan{
+    margin-top: 3px;
+    color: #a7a7a7;
+    font-size: 1.2rem;
+  }
+  .search-item-span-shizhan{
+    color: #a7a7a7;
+    margin-left: 15%;
+  }
+  .search-name{
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  .search-wushizhan{
+    margin-left: 4%;
+    font-size: 1.5rem;
+  }
+  .toolbar .searchbar-md {
+    padding: 3px;
+    //width: 82%;
+    float: right;
+  }
+}

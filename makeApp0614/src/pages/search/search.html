@@ -1,0 +1,143 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start style="order:1 !important;" >
+      <button ion-button icon-left clear (click)="dismiss()">
+        <ion-icon name="arrow-back" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="请输入搜索内容"></ion-searchbar>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background-color: rgb(243,245,247)">
+  <!--<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>-->
+  <ion-card >
+    <ion-row>
+      <p class="search-title-cou">实战</p>
+    </ion-row>
+    <hr>
+
+    <ion-list >
+      <div  [ngSwitch]="actualStatus">
+        <div *ngSwitchCase="default">
+          <ion-item *ngFor="let actual of fourActualcomb" (click)="itemTapped($event,actual.ano)">
+            <img src="{{actual.acover_img}}" >
+            <h3 class="search-name">{{actual.aname}}</h3>
+            <p class="search-item-p-shizhan">实战<span class="search-item-span-shizhan">{{actual.renshu}}人学习</span></p>
+          </ion-item>
+          <ion-label text-center>查看更多</ion-label>
+        </div>
+
+        <div *ngSwitchCase="'true'">
+          <ion-item *ngFor="let actual of fourActualcomb" (click)="itemTapped($event,actual.ano)">
+            <img src="{{actual.acover_img}}" >
+            <h3 class="search-name">{{actual.aname}}</h3>
+            <p class="search-item-p-shizhan">实战<span class="search-item-span-shizhan">{{actual.renshu}}人学习</span></p>
+          </ion-item>
+          <ion-label text-center>查看更多</ion-label>
+        </div>
+        <div *ngSwitchCase="'flase'">
+            <ion-label class="search-wushizhan">对不起，未找到该实战</ion-label>
+        </div>
+      </div>
+
+      <!--<ion-item>
+        <img src="http://img.mukewang.com/53e1d0470001ad1e06000338-240-135.jpg" >
+        <h3 class="search-name">javascript入门篇</h3>
+        <p class="search-item-p-shizhan">实战<span class="search-item-span-shizhan">1000人学习</span></p>
+      </ion-item>-->
+
+
+    </ion-list>
+
+  </ion-card>
+
+
+  <ion-card >
+    <ion-row>
+      <p class="search-title-cou">课程</p>
+    </ion-row>
+    <hr>
+    <ion-list>
+      <div  [ngSwitch]="courseStatus">
+        <div *ngSwitchCase="default">
+          <ion-item *ngFor="let course of fourCourse" (click)="goToOtherPage(course.cno,course.c_sortname)">
+            <img src="{{course.background}}" >
+            <h3 class="search-name">{{course.cname}}</h3>
+            <p class="search-item-p-shizhan">课程<span class="search-item-span-shizhan">{{course.renshu}}人学习</span></p>
+          </ion-item>
+          <ion-label text-center>查看更多</ion-label>
+        </div>
+
+        <div *ngSwitchCase="'true'">
+          <ion-item *ngFor="let course of fourCourse" (click)="goToOtherPage(course.cno,course.c_sortname)">
+            <img src="{{course.background}}" >
+            <h3 class="search-name">{{course.cname}}</h3>
+            <p class="search-item-p-shizhan">课程<span class="search-item-span-shizhan">{{course.renshu}}人学习</span></p>
+          </ion-item>
+          <!--<ion-item>-->
+          <!--<img src="http://img.mukewang.com/53e1d0470001ad1e06000338-240-135.jpg" >-->
+          <!--<h3 class="search-name">javascript入门篇</h3>-->
+          <!--<p class="search-item-p-shizhan">课程<span class="search-item-span-shizhan">1000人学习</span></p>-->
+          <!--</ion-item>-->
+
+          <ion-label text-center>查看更多</ion-label>
+        </div>
+        <div *ngSwitchCase="'flase'">
+          <ion-label class="search-wushizhan">对不起，未找到该课程</ion-label>
+        </div>
+      </div>
+
+
+
+
+
+    </ion-list>
+
+  </ion-card>
+
+  <ion-card >
+    <ion-row>
+      <p class="search-title-cou">猿问</p>
+    </ion-row>
+    <hr>
+    <ion-list>
+      <div  [ngSwitch]="questionStatus">
+        <div *ngSwitchCase="default">
+          <ion-item *ngFor="let question of fourQuestion" (click)="questionDetail(question.qno)">
+            <p>{{question.qtitle}}</p>
+          </ion-item>
+
+          <ion-label text-center>查看更多</ion-label>
+        </div>
+
+        <div *ngSwitchCase="'true'">
+          <ion-item *ngFor="let question of fourQuestion" (click)="questionDetail(question.qno)">
+            <p  style="color: black">{{question.qtitle}}</p>
+          </ion-item>
+
+          <ion-label text-center>查看更多</ion-label>
+        </div>
+        <div *ngSwitchCase="'flase'">
+          <ion-label class="search-wushizhan">对不起，未找到该类猿问</ion-label>
+        </div>
+      </div>
+
+
+
+
+    </ion-list>
+
+  </ion-card>
+
+</ion-content>

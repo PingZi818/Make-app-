@@ -1,0 +1,60 @@
+<ion-header [color]="'dark'">
+  <ion-navbar no-border-bottom [color]="'dark'">
+    <ion-title *ngFor="let CourseDetail of CourseDetail">
+      {{CourseDetail.cname}}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="star"></ion-icon>
+      </button>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="share"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list >
+    <ion-item >
+      <div *ngFor="let CourseDetail of CourseDetail">
+        <span class="question-index-write">{{CourseDetail.degreename}}</span>
+        <h3 class="video-detail question-index-res"> {{CourseDetail.cdetail}}</h3>
+      </div>
+    </ion-item>
+    <ion-item>
+      <button ion-item>
+        <img class="video-comment-img" src="http://img.mukewang.com/54ae342d0001fc3401750175-40-40.jpg" item-left no-border>
+        Pub
+      </button>
+    </ion-item>
+    <ion-item>
+      <h2 >课程须知</h2>
+
+      <h3 class="video-detail">该课程是针对新手的一个简单基础的课程，让您快速了解JS，通过一些简单的代码编写体会JS。如果您已经对JS有所了解，可以跳过本课程，学习JS进阶课程，进一步学习JS相应的基础知识。学习本课程，希望您至少具备HTML/CSS基础知识，认识常用的标签。</h3>
+
+      <h2 >老师告诉你能学到什么</h2>
+
+      <h3 class="video-detail">
+        1. 理解JavaScript基础语法；<br>
+        2. 掌握常用语句的使用方法；<br>
+        3. 学会如何获取DOM元素及进行简单操作。</h3>
+
+    </ion-item>
+    <ion-item >
+      <h2 >课程提纲</h2>
+     <div *ngFor="let Chapter of Chapter">
+       <h2 class="video-charpt">{{Chapter.dir_content}}</h2>
+       <h3 class="video-section"*ngFor="let Section of Section|pipedetail:Chapter.chapterno"(click)=" startStudy();playSectionVideo($event,cno,c_sortname,sectionvideolinks,Section.chapterno,Section.sectionno)">
+         <ion-icon name="play"></ion-icon>   {{Section.chapterno}}-{{Section.sectionno}}{{Section.sectioncontent}}</h3>
+     </div>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button full color="danger"(click)=" startStudy();videoPage(cno,c_sortname,sectionvideolinks)">开始学习</button>
+  </ion-toolbar>
+</ion-footer>
+

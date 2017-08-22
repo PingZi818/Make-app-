@@ -1,0 +1,234 @@
+<ion-header [color]="'dark'">
+  <ion-navbar no-border-bottom [color]="'dark'">
+    <ion-toolbar [color]="'dark'">
+      <ion-buttons start>
+        <button ion-button icon-only color="royal" (click)="search()">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title style="font-size:0.8rem">首页</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only color="royal">
+          <ion-icon name="mail"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content style="background-color:rgb(243,245,247) ">
+  <ion-slides #ionSlides loop="true" autoplay="3000" pager (ionSlideAutoplayStop)="autoPlay()" style="height: 130px;">
+    <ion-slide >
+      <img src="http://or7kijeg2.bkt.clouddn.com/home-1.jpg" class="slide-image"/>
+    </ion-slide>
+    <ion-slide >
+      <img src="http://or7kijeg2.bkt.clouddn.com/home-2.jpg" class="slide-image"/>
+    </ion-slide>
+    <ion-slide >
+    <img src="http://or7kijeg2.bkt.clouddn.com/home-3.jpg" class="slide-image"/>
+  </ion-slide>
+    <ion-slide >
+      <img src="http://or7kijeg2.bkt.clouddn.com/home-4.jpg" class="slide-image"/>
+    </ion-slide>
+  </ion-slides>
+
+      <ion-row style="background-color:white ">
+    <ion-col col-3>
+      <img src="http://or7kijeg2.bkt.clouddn.com/index_free_course.png" >
+    </ion-col>
+    <ion-col col-3>
+      <img src="http://or7kijeg2.bkt.clouddn.com/index_acutal.png" alt="">
+    </ion-col>
+    <ion-col col-3>
+      <img src="http://or7kijeg2.bkt.clouddn.com/index_question.png" alt="">
+    </ion-col>
+    <ion-col col-3>
+      <img src="http://or7kijeg2.bkt.clouddn.com/index_hand_note.png" alt="">
+    </ion-col>
+  </ion-row>
+
+
+  <ion-grid>
+    <ion-row>
+        <ion-label text-center style="margin-left: 50px">   <ion-icon name="star" style="color: #0048ff"
+        ></ion-icon> 课程推荐
+          <span style="float: right ;font-size: 0.6rem">更多</span>
+        </ion-label>
+
+    </ion-row>
+
+    <ion-row>
+
+        <div class="index-card-container course-card-container"    *ngFor="let item of newDataCourse" (click)="goToOtherPage(item.cno,item.c_sortname)">
+
+          <a  class="course-card" >
+
+            <div class="course-card-top cart-color  {{item.bgcolor}}" >
+              <i class="imv2-war"></i>
+              <span >{{item.c_sortname}}</span>
+            </div>
+            <div class="course-card-content">
+              <h3 class="course-card-name" >{{item.cname}}</h3>
+              <p title="HTML+CSS基础教程8小时带领大家步步深入学习标签用法和意义" >{{item.cover_detail}}</p>
+              <div class="clearfix course-card-bottom">
+                <div class="course-card-info" ng-cloak>
+                  {{item.degreename}}<span>·</span>
+                  {{item.renshu}}人在学
+                </div>
+
+              </div>
+            </div>
+          </a>
+          <div class="course-card-bk">
+            <img src="http://www.imooc.com/courseimg/s/cover050_s.jpg" >
+          </div>
+        </div>
+
+
+
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-label text-center style="margin-left: 50px">   <ion-icon name="star" style="color: #ffa108"
+      ></ion-icon> 精品实战
+        <span style="float: right ;font-size: 0.6rem">更多</span>
+      </ion-label>
+
+    </ion-row>
+
+    <!--<ion-list >-->
+      <!--<ion-item  *ngFor="let ac of newDataActualcomb" (click)="itemTapped($event,ac.ano)">-->
+        <!--<ion-avatar   item-left>-->
+          <!--<img  class="home-shizhanimg" src="{{ac.img_app}}">-->
+        <!--</ion-avatar>-->
+
+        <!--<h2>{{ac.aname}}</h2>-->
+        <!--<h3 style="    font-size: 0.6rem;white-space: normal;color: #717272">{{ac.acover_content}}</h3>-->
+        <!--<p style="    font-size: 0.6rem;margin-top: 8px;">{{ac.renshu}}人学习   <span class="home-price">￥{{ac.price}}</span></p>-->
+      <!--</ion-item>-->
+
+
+    <!--</ion-list>-->
+
+    <ion-grid  style="margin-top:3px;background-color: white">
+      <ion-row *ngFor="let ac of newDataActualcomb" (click)="itemTapped($event,ac.ano)" style="border-bottom:solid 0.5px rgba(120, 120, 120, 0.34););    padding-top: 3px;    padding-bottom: 3px;">
+        <ion-col col-3 >
+          <img class="home-shizhanimg" src="{{ac.img_app}}" alt="">
+        </ion-col>
+        <ion-col col-9 style="padding-left:8px">
+          <ion-row style="font-size:1.5rem;height: 15px;">{{ac.aname}}</ion-row>
+          <ion-row style="color: gray; margin-top: 3%;font-size: 1.3rem;">{{ac.acover_content}}</ion-row>
+          <ion-row style="padding-top: 25px;">
+            <ion-col col-6 style="font-size:0.6em;color:gray;margin-top: 1px;">{{ac.renshu}}人学习</ion-col>
+            <ion-col col-6 style="font-size:1.5rem;color:red" text-right>￥{{ac.price}}.00</ion-col>
+
+
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="home-shizhan-img">
+      <img class="home-shizhan-block" src="http://or7kijeg2.bkt.clouddn.com/home-shizhan-block.jpg" alt="">
+    </div>
+  </ion-grid>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-label text-center style="margin-left: 50px">   <ion-icon name="star" style="color: #0048ff"
+      ></ion-icon> 最新课程
+        <span style="float: right ;font-size: 0.6rem">更多</span>
+      </ion-label>
+    </ion-row>
+    <ion-row>
+      <div class="index-card-container course-card-container"    *ngFor="let item of newInCourse"  (click)="goToOtherPage(item.cno,item.c_sortname)">
+
+        <a  class="course-card" >
+
+          <div class="course-card-top cart-color  {{item.bgcolor}}" >
+            <i class="imv2-war"></i>
+            <span ng>{{item.c_sortname}}</span>
+          </div>
+          <div class="course-card-content">
+            <h3 class="course-card-name" >{{item.cname}}</h3>
+            <p title="HTML+CSS基础教程8小时带领大家步步深入学习标签用法和意义" >{{item.cover_detail}}</p>
+            <div class="clearfix course-card-bottom">
+              <div class="course-card-info" ng-cloak>
+                {{item.degreename}}<span>·</span>
+                {{item.renshu}}人在学
+              </div>
+
+            </div>
+          </div>
+        </a>
+        <div class="course-card-bk">
+          <img src="http://www.imooc.com/courseimg/s/cover050_s.jpg" >
+        </div>
+      </div>
+
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-label text-center style="margin-left: 20px">   <ion-icon name="arrow-dropup-circle" style="color: green"
+      ></ion-icon> 新课上架
+
+      </ion-label>
+    </ion-row>
+
+<!--
+    <ion-list >
+      <ion-item  *ngFor="let ac of newInActualcomb" (click)="itemTapped($event,ac.ano)">
+        <ion-avatar   item-left>
+          <img  class="home-shizhanimg" src="{{ac.img_app}}">
+        </ion-avatar>
+
+        <h2>{{ac.aname}}</h2>
+        <h3 style="    font-size: 0.6rem;white-space: normal;color: #717272">{{ac.acover_content}}</h3>
+        <p style="    font-size: 0.6rem;margin-top: 8px;">{{ac.renshu}}人学习   <span class="home-price">￥{{ac.price}}</span></p>
+      </ion-item>
+
+    </ion-list>
+-->
+
+    <ion-grid  style="margin-top:3px;background-color: white">
+      <ion-row *ngFor="let ac of newInActualcomb" (click)="itemTapped($event,ac.ano)" style="border-bottom:solid 0.5px rgba(120, 120, 120, 0.34);    padding-top: 3px;    padding-bottom: 3px;">
+        <ion-col col-3 >
+          <img class="home-shizhanimg" src="{{ac.img_app}}" alt="">
+        </ion-col>
+        <ion-col col-9 style="padding-left:8px">
+          <ion-row style="font-size:1.5rem;height: 15px">{{ac.aname}}</ion-row>
+          <ion-row style="color: gray; margin-top: 3%;font-size: 1.3rem;">{{ac.acover_content}}</ion-row>
+          <ion-row style="padding-top:  25px;">
+            <ion-col col-6 style="font-size:0.6em;color:gray;margin-top: 1px;">{{ac.renshu}}人学习</ion-col>
+            <ion-col col-6 style="font-size:1.5rem;color:red" text-right>￥{{ac.price}}.00</ion-col>
+
+
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-grid>
+
+  <ion-grid style=" ">
+    <ion-row>
+      <ion-label text-center >码客名师推荐</ion-label>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-3 class="home-teacher" *ngFor="let tea of newDataTeacher">
+        <div text-center>
+          <img src="{{tea.ticon}}" alt="" height="40" width="40" class="home-teacher-img">
+          <div>{{tea.tname}}</div>
+          <div class="home-teacher-career">{{tea.tcareer}}</div>
+        </div>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

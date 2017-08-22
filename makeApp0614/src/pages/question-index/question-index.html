@@ -1,0 +1,111 @@
+<!--
+  Generated template for the QuestionIndexPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header id="home_title">
+
+  <ion-navbar [color]="'dark'">
+    <ion-toolbar [color]="'dark'">
+      <ion-buttons start>
+        <button ion-button icon-only color="royal" (click)="search()">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title style="font-size:0.8rem">猿问</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only color="royal">
+          <ion-icon name="mail"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top [color]="'dark'">
+    <ion-segment [(ngModel)]="segmentModel">
+      <ion-segment-button value="segmentOne">
+        推荐
+      </ion-segment-button>
+      <ion-segment-button value="segmentTwo">
+        等待回答
+      </ion-segment-button>
+      <ion-segment-button value="segmentThree">
+        全部回答
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+<span style=" position: absolute;bottom: 75px;z-index: 100;right: 15px;" (click)="questionTiwen()">
+    <button ion-button icon-only>
+  <ion-icon name="add"></ion-icon>
+</button></span>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="释放刷新"
+      refreshingSpinner="circles"
+      refreshingText="正在刷新...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div (swipe)="swipeEvent($event)" [ngSwitch]="segmentModel">
+
+    <ion-list *ngSwitchCase="'segmentOne'">
+
+
+
+      <ion-item (click)="questionDetail(tuijian.qno)" *ngFor="let tuijian of tuijianQuestion" >
+        <p class="question-index-sort">来自 {{tuijian.c_sortname}}</p>
+        <h2 class="question-index-req">{{tuijian.qtitle}}</h2>
+        <h3 class="question-index-res">[<span style="color: #555555" >{{tuijian.user_name}}</span> 的回答 ] {{tuijian.rdetail}}</h3>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'segmentTwo'">
+      <ion-item *ngFor="let wait of waitQuestion" (click)="questionDetail(wait.qno)">
+        <p class="question-index-sort">来自 {{wait.c_sortname}}</p>
+        <h2 class="question-index-req">{{wait.qtitle}}</h2>
+        <h3 class="question-index-res">
+          <span class="question-index-write">
+            <ion-icon name="create"></ion-icon> 撰写答案</span>
+          回答问题最高可获得<span style="color: #ff8a01">3积分</span>哦！
+        </h3>
+      </ion-item>
+      <ion-item>
+        <p class="question-index-sort">来自 JavaScript</p>
+        <h2 class="question-index-req">希望已经工作的来回答</h2>
+        <h3 class="question-index-res">
+          <span class="question-index-write">
+            <ion-icon name="create"></ion-icon> 撰写答案</span>
+          回答问题最高可获得<span style="color: #ff8a01">3积分</span>哦！
+        </h3>
+      </ion-item>
+      <ion-item>
+        <p class="question-index-sort">来自 JavaScript</p>
+        <h2 class="question-index-req">希望已经工作的来回答</h2>
+        <h3 class="question-index-res">
+          <span class="question-index-write">
+            <ion-icon name="create"></ion-icon> 撰写答案</span>
+          回答问题最高可获得<span style="color: #ff8a01">3积分</span>哦！
+        </h3>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'segmentThree'">
+      <ion-item (click)="questionDetail(tuijian.qno)" *ngFor="let tuijian of allQuestion" >
+        <p class="question-index-sort">来自 {{tuijian.c_sortname}}</p>
+        <h2 class="question-index-req">{{tuijian.qtitle}}</h2>
+        <h3 class="question-index-res">[<span style="color: #555555" >{{tuijian.user_name}}</span> 的回答 ] {{tuijian.rdetail}}</h3>
+      </ion-item>
+
+    </ion-list>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,19 @@
+page-person-myactual {
+  ion-card img {
+    display: inline-block;
+    width: 30%;
+    height: 20%;
+    float: left;
+    //margin-left: 3%;
+    margin-right: 3%;
+  }
+  .ordertitle{
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+  .ordertime{
+    line-height: 30px;
+    margin-left: 3%;
+    font-size:1.1rem;
+  }
+}

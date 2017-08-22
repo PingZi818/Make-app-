@@ -1,0 +1,46 @@
+
+<ion-header>
+  <ion-grid >
+    <ion-row>
+        <button ion-button icon-left clear (click)="dismiss()">
+          <ion-icon name="close" ></ion-icon>
+        </button>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="login-page-top">
+    <ion-row>
+      <ion-col col-12>欢迎登录码客网</ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+      <ion-col col-12>
+        <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" novalidate>
+          <ion-item [class.error]="!user_tel.valid && user_tel.touched">
+            <ion-input type="text" placeholder="请输入您的手机号" value="" [formControl]="user_tel" clearInput="true"></ion-input>
+          </ion-item>
+          <ion-label *ngIf="user_tel.hasError('required') && user_tel.touched" class="error-message">* 请输入用户名</ion-label>
+          <ion-label *ngIf="(user_tel.hasError('minlength') || user_tel.hasError('maxlength')|| user_tel.hasError('pattern')) && user_tel.touched" class="error-message">* 请输入正确的电话号码</ion-label>
+
+          <ion-item>
+            <ion-input type="password" placeholder="请输入密码"  value="" [formControl]="user_password" clearInput=true></ion-input>
+          </ion-item>
+          <ion-label *ngIf="user_password.hasError('required') && user_password.touched" class="error-message">* 密码</ion-label>
+          <ion-label *ngIf="user_password.hasError('minlength') && user_password.touched" class="error-message">* 长度最少为6位</ion-label>
+          <button ion-button block color="secondary" type="submit" [disabled]="!loginForm.valid">登录</button>
+        </form>
+      </ion-col>
+
+
+
+
+
+
+  <ion-label text-center (click)="rigist()" class="login-regist">注册账号</ion-label>
+</ion-content>

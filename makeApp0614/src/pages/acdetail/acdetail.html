@@ -1,0 +1,125 @@
+<!--
+  Generated template for the AcdetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header >
+  <ion-navbar style="background-color: rgb(52,57,75)!important;" [color]="'dark'">
+    <ion-toolbar style="min-height: 0px!important; ">
+
+      <ion-title style="font-size:0.8rem;">详情</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only color="royal">
+          <ion-icon name="share"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+    <ion-grid *ngFor="let adetail of a_details" [ngClass]="adetail.a_background" >
+       <ion-grid class="broad-inner" >
+
+         <ion-row class="broad-title-container">
+           <ion-col col-10 class="broad-title">{{adetail.aname}}</ion-col>
+         </ion-row>
+         <ion-row style="margin-top:15px">
+           <ion-col>
+             <button ion-button color="light" style="border: 1px solid rgba(255,255,255,.5);border-radius: .13333333rem;" outline>
+               <ion-icon name="md-play"></ion-icon>
+               <span style="margin-left:5px" (click)="itemTapped($event)">
+               导学视频
+               </span>
+             </button>
+           </ion-col>
+         </ion-row>
+       </ion-grid>
+    </ion-grid>
+
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segmentModel">
+      <ion-segment-button value="介绍">
+        介绍
+      </ion-segment-button>
+      <ion-segment-button value="章节">
+        章节
+      </ion-segment-button>
+      <ion-segment-button value="评论">
+        评论
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <div (swipe)="swipeEvent($event)" [ngSwitch]="segmentModel">
+
+    <!--介绍-->
+    <ion-list *ngSwitchCase="'介绍'"  >
+      <ion-grid *ngFor="let adetail of a_details" style="margin-bottom: 50px">
+      <img src="{{adetail.a_intro}}" alt="">
+      <img src="{{adetail.a_envir}}" alt="">
+      </ion-grid>
+    </ion-list>
+
+    <!--章节-->
+    <ion-list *ngSwitchCase="'章节'" >
+      <ion-grid  >
+        <ion-row *ngFor="let achapter of a_chapter" style="margin-left:8px;margin-right:8px;border-bottom:solid 1px rgba(6, 10, 13, 0.29);padding-bottom:12px;padding-top:12px" >
+          <ion-col col-1 >
+            <img class="video-comment-img" src="http://img.mukewang.com/54ae342d0001fc3401750175-40-40.jpg">
+          </ion-col>
+          <ion-col col-11 style="padding-left:8px">
+            <ion-row style="font-size:0.8em; ">
+              <ion-col col-3>{{achapter.chaptername}}</ion-col>
+              <ion-col col-9>{{achapter.chapter_title}}</ion-col>
+            </ion-row>
+            <ion-row style="font-size:0.6em;color:gray">{{achapter.chapter_detail}}</ion-row>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </ion-list>
+
+
+    <!--评论-->
+    <ion-list *ngSwitchCase="'评论'">
+      <!--<ion-item *ngFor="let acomments of a_comments">-->
+        <!--<ion-row  >-->
+        <!--<ion-col col-1 >-->
+          <!--<img src="http://opdizmh0n.bkt.clouddn.com/{{acomments.user_icon}}">-->
+        <!--</ion-col>-->
+        <!--<ion-col col-11>-->
+        <!--<p>{{acomments.user_name}}</p>-->
+        <!--<p>{{acomments.user_name}}</p>-->
+        <!--<p>{{acomments.acdetail}}</p>-->
+        <!--</ion-col>-->
+        <!--</ion-row>-->
+      <!--</ion-item>-->
+
+        <ion-item *ngFor="let acomments of a_comments">
+          <ion-avatar  item-left>
+            <img src="http://opdizmh0n.bkt.clouddn.com/{{acomments.user_icon}}">
+          </ion-avatar>
+          <h2>{{acomments.user_name}}</h2>
+          <h5>{{acomments.user_name}}</h5>
+          <p>{{acomments.acdetail}}</p>
+        </ion-item>
+    </ion-list>
+  </div>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar *ngFor="let adetail of a_details" style="height:50px" >
+    <p style="display: inline-block;color:red;font-size:24px;">￥<span>{{adetail.price}}</span>.00</p>
+   <ion-buttons end>
+    <p style="display: inline-block;background-color: transparent;width:120px;height:50px;text-align:center;color:white;line-height:50px;font-size:1em;margin-right:-5px">加入购物车</p>
+    <p style="display: inline-block;background-color: red;width:120px;height:50px;text-align:center;color:white;line-height:50px;font-size:1em">
+      <button (click)="toCreateOrder(adetail.ano)" ion-button clear style="line-height:40px">立即购买</button>
+    </p>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

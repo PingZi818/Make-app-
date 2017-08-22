@@ -1,0 +1,200 @@
+page-acdetail {
+  //修改默认
+  .toolbar-title{
+    margin-left: -110px !important;
+  }
+   //.broad{
+   // height: 200px;
+   //  width: 100%;
+   //  background-position: center;
+   //  background-size: cover;
+   //  text-align: center;
+   //  overflow: hidden;
+   //  position: relative;
+   //  padding: 0px !important;
+   //}
+  .grid{
+    padding:0px 0px !important;
+  }
+  .broad-inner{
+    background-color: rgba(16, 28, 34, 0.51);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 170px;
+  }
+  .broad-title-container{
+    margin-top: 45px;
+  }
+  .broad-title{
+    margin: auto;
+    text-align: center;
+    font-size: 1em;
+    color: white;
+  }
+  //修改默认
+  .segment-md .segment-button{
+    color: grey !important;
+  }
+  //修改默认
+  .segment-md .segment-button.segment-activated{
+    border-color: red;
+    color: red !important;
+  }
+  //修改默认
+  .toolbar-content-md{
+    text-align: center;
+  }
+  //修改默认
+  ion-buttons{
+    margin: 0 0 !important;
+  }
+  //修改默认
+  .bar-button-clear-md{
+    vertical-align: middle;
+    color: white;
+  }
+  .ac-infobg-jQuery{
+    height: 170px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px !important;
+    background-color:#000;background-image: url(http://szimg.mukewang.com/5806de7c00014a3105400300-360-202.jpg);
+  }
+  .ac-infobg-angular{
+    height: 170px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px !important;
+    background-color:#000;background-image: url(http://szimg.mukewang.com/58d8c6da0001ff8505400300-360-202.jpg);
+  }
+  .ac-infobg-nodejsweixin{
+    height: 170px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px !important;
+    background-color:#000;background-image: url( http://szimg.mukewang.com/576376520001da3d05400300-360-202.jpg);
+  }
+  .ac-infobg-nodejsbushu{
+    height: 170px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px !important;
+    background-color:#000;background-image: url( http://szimg.mukewang.com/58e75f2e00015c0705400300-360-202.jpg);
+  }
+  .ac-infobg-weixin{
+    height: 170px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px !important;
+    background-color:#000;background-image: url( http://szimg.mukewang.com/583e42fb0001e04f05400300-360-202.jpg);
+  }
+  .ac-infobg-webappbook{
+    height: 170px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px !important;
+    background-color:#000;background-image: url(http://szimg.mukewang.com/586e0f55000158db05400300-360-202.jpg);
+  }
+  .ac-infobg-webappzujian{
+    height: 170px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px !important;
+    background-color:#000;background-image: url(http://szimg.mukewang.com/5763765d0001352105400300-360-202.jpg);
+  }
+  .ac-infobg-es{
+    height: 170px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px !important;
+    background-color:#000;background-image: url(http://szimg.mukewang.com/58fea8780001f29c05400300-360-202.jpg);
+  }
+  .ac-infobg-xiangying{
+    height: 170px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px !important;
+    background-color:#000;background-image: url(http://szimg.mukewang.com/576b84c10001b1c005400300-360-202.jpg);
+  }
+  .ac-infobg-vuerumen{
+    height: 170px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px !important;
+    background-color:#000;background-image: url(http://szimg.mukewang.com/58ca659a00017c3705400300-360-202.jpg);
+  }
+  .ac-infobg-angularlagou{
+    height: 170px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px !important;
+    background-color:#000;background-image: url(http://szimg.mukewang.com/588170340001b26105400300-360-202.jpg);
+  }
+  .ac-infobg-reactjs{
+    height: 170px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px !important;
+    background-color:#000;background-image: url(http://szimg.mukewang.com/58a68f000001262805400300-360-202.jpg);
+  }
+  .ac-infobg-vueele{
+    height: 170px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px !important;
+    background-color:#000;background-image: url(http://szimg.mukewang.com/582ac41a0001d3c705400300-360-202.jpg);
+  }
+}

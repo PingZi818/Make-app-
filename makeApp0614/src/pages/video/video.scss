@@ -1,0 +1,71 @@
+page-video {
+  .segment-md .segment-button.segment-activated {
+    border-color: red !important;
+    opacity: 1;
+
+  }
+  .segment-md .segment-button{
+    color: black;
+    font-size: 1.5rem;
+  }
+  .video-section{
+    font-size:12px;white-space: normal;color: #5a5b5b;
+    margin-left:15px;margin-top:5%;
+    margin-bottom: 3%;
+  }
+  .video-section[aria-selected=true]{
+    color: red;
+  }
+  .video-charpt{
+    margin-top:12px;white-space: normal;color: #5a5b5b;
+  }
+  .video-detail{
+    font-size: 14px;
+    white-space: normal;
+    color: #5a5b5b;
+    margin-left: 15px;
+    margin-top: 15px;
+    line-height: 23px;
+  }
+  .video-detail-ques{
+    font-size: 1.3rem;
+    white-space:normal;
+    color: #5a5b5b;
+    text-overflow:ellipsis;
+    margin-left: 15px;
+    //margin-top: 15px;
+    line-height: 23px;
+  }
+  .video-commenth{
+    color: #444444;
+    font-size: 0.9rem;
+  }
+  .video-commen{
+    color: #878787;
+    font-size: 0.3rem;
+  }
+  .video-commentp{
+    white-space: normal;
+    color: #000000;
+  }
+  .video-like-count{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  .video-comment-img{
+      position: absolute;
+      top: 15px;
+  }
+  .broad{
+    height: 200px;
+    width: 100%!important;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px !important;
+  }
+  .red{color:red!important;}
+}
